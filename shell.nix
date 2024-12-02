@@ -17,10 +17,12 @@ let
       url = sparkUrl;
       sha512 = sparkHash;
     };
+    # Install the tarball on the system, it will be located /nix/store/...
     installPhase = ''
       mkdir -p $out
       tar -xzf $src --strip-components=1 -C $out
     '';
+    # Define the metadata of the derivation, not relevant for the build
     meta = {
       description = "Apache Spark ${sparkVersion} with prebuilt Hadoop3 binaries";
       licenses= pkgs.licenses.apache2;
