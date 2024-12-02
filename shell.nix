@@ -32,8 +32,10 @@ in
 # Define the develpment shell that includes Spark, sbt and Zulu8 JDK
 pkgs.mkShell {
   packages = [
+    # Packages from nixpkgs (https://search.nixos.org/packages)
     pkgs.zulu8
     pkgs.sbt
+    # Spark binary fetched from the official Apache archive
     spark
    ]; 
 
